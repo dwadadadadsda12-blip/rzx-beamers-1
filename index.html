@@ -1,0 +1,135 @@
+```html id="4kqg1n"
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RzX Beamers</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#0d1117;
+    color:#e6edf3;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.title{
+    font-size:42px;
+}
+
+.sub{
+    color:#8b949e;
+    margin-top:10px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 28px;
+    background:#5865F2;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+/* STATS */
+.stats{
+    margin-top:20px;
+    font-size:14px;
+    color:#aaa;
+}
+
+/* SEÇÕES */
+.section{
+    padding:40px 20px;
+    text-align:center;
+}
+
+/* CARDS */
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.card{
+    background:#161b22;
+    padding:20px;
+    border-radius:10px;
+    width:220px;
+}
+
+/* WIDGET */
+.widget{
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#8b949e;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="title">RzX Beamers</div>
+    <div class="sub">Comunidade oficial</div>
+
+    <a href="https://discord.gg/XCVvWZq54Y" class="btn">
+        Entrar no Servidor
+    </a>
+
+    <div class="stats" id="stats">Carregando estatísticas...</div>
+</div>
+
+<div class="section">
+    <h2>O que você encontra</h2>
+    <div class="cards">
+        <div class="card">💬 Comunidade ativa</div>
+        <div class="card">⚡ Conteúdos exclusivos</div>
+        <div class="card">🛠 Suporte rápido</div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Servidor ao vivo</h2>
+
+    <div class="widget">
+        <iframe src="https://discord.com/widget?id=1464674617313722440&theme=dark"
+        width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+
+</div>
+
+<div class="footer">
+    RzX Beamers • Is back & Pelezin
+</div>
+
+<script>
+// PUXAR ESTATÍSTICAS DO WIDGET
+fetch("https://discord.com/api/guilds/1464674617313722440/widget.json")
+.then(res => res.json())
+.then(data => {
+    document.getElementById("stats").innerText =
+        "Membros online: " + data.presence_count;
+});
+</script>
+
+</body>
+</html>
+```
